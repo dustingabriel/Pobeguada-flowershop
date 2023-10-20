@@ -3,7 +3,7 @@
 /*---------------------------main header style--------------------------------*/
 .hero-section{
     width: 100%;
-    height: calc(100vh - 120px);
+    height: calc(50vh - 120px);
     background-image: url('../img/header.png');
     background-size: cover;
     display: flex;

@@ -6,7 +6,7 @@ const createNav = () => {
             <img src="img/dark-logo.png" class="brand-logo" alt="">
             <div class="nav-items">
                 <div class="search">
-                    <input type="text" class="search-box" placeholder="search product"> 
+                    <input type="search" class="search-box" placeholder="search product" onkeyup="search()"> 
                     <a href="search.html"><input type="submit" class="search-btn" value="Search"></a>
                 </div>
                 <a href="#"><img src="img/user.png" alt=""></a>
@@ -15,9 +15,9 @@ const createNav = () => {
         </div>
         <ul class="links-container">
             <li class="link-item"><a href="index.html" class="link">home</a></li>
-            <li class="link-item"><a href="#" class="link">Anniversary</a></li>
+            <li class="link-item"><a href="plantscollection.html" class="link">Anniversary</a></li>
             <li class="link-item"><a href="#" class="link">birthdays</a></li>
-            <li class="link-item"><a href="#" class="link">Plants</a></li>
+            <li class="link-item"><a href="plantscollection.html" class="link">Plants</a></li>
             <li class="link-item"><a href="#" class="link">Gift set</a></li>
         </ul>
     `;
