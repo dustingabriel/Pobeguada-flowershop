@@ -16,7 +16,7 @@ const createFooter = () => {
         </div>
     </div>
     <p class="footer-title">about company</p>
-    p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Omnis praesentium esse neque, ipsum dolorum blanditiis quos suscipit voluptatem facilis. 
     Suscipit libero repudiandae nemo est ut dolor rem eligendi voluptatibus quod.</p>
     `;
