@@ -22,9 +22,32 @@ submitBtn.addEventListener('click', () =>{
         showAlert('you must agree to our terms and conditions');
     } else{
         //submit form
-        loader.style.display = 'block';
+        loader.style.display = 'block'; 
+        sendData('/signup',{
+            name: name.value,
+            email: email.value,
+            password: password.value,
+            number: number.value,
+            tac: tac.checked,
+            notification: notification.checked,
+            seller: false
+        })
     }
 })
+
+
+
+// send data function
+const sendData = (path, data) =>{
+    fetch(path, {
+        method: 'post',
+        headers: new Headers({'Content-Type': 'application/json'}),
+        body: JSON.stringify(data)
+    }).then((res) => res.json())
+    .then(response => {
+        console.log(response);
+    })
+}
   
 //alert function
 const showAlert = (msg) => {
