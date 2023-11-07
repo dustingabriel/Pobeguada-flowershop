@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Product Catalog</title>
+    <title>Product Page</title>
     <link rel="stylesheet " href="css-files/home.css">
     <link rel="stylesheet " href="css-files/product.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <nav class="navbar"></nav>
@@ -19,31 +22,48 @@
         </div>
         <div class="details">
             <h2 class="product-brand">Sunflower Boquet</h2>
-            <p class="product-short-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus ad nobis quos sequi quod in ipsum! Eius, explicabo! Ipsum mollitia perferendis alias ullam omnis excepturi nihil dicta fugit eaque!</p>
-            <span class="product-price">450</span>
-            <span class="product-actual-price">500</span>
-            <span class="product-discount">( 10% off! )</span>
+            <p class="product-short-des">Introducing our Sunflower Bouquet: Nature's radiant sunshine, carefully hand-picked for maximum cheer. Bring happiness home from Pobeguada</p>
+            <span class="product-price">₱450</span>
+            <span class="product-actual-price">₱500</span>
+            <span class="product-discount">10% off!</span>
 
-            <p class="product-sub-heading">select delivery date</p>
-
-            <input type="radio" name="size" value="s" checked hidden id="s-size">
-            <label for="s-size" class="size-radio-btn check">s</label>
-            <input type="radio" name="size" value="m" hidden id="m-size">
-            <label for="m-size" class="size-radio-btn">m</label>
-            <input type="radio" name="size" value="l" hidden id="l-size">
-            <label for="l-size" class="size-radio-btn">l</label>
-            <input type="radio" name="size" value="xl" hidden id="xl-size">
-            <label for="xl-size" class="size-radio-btn">xl</label>
-
-        <button class="btn cart-btn">place order</button>
-        <button class="btn">add to cart</button>
+            <p class="product-sub-heading">select delivery date:</p>
+            
+            <label class="radio-container">
+                <input type="radio" name="radio-group">
+                <div class="radio-button">
+                    <label>November 15 <strong>today</strong></label>
+                </div>
+            </label>
+        
+            <label class="radio-container">
+                <input type="radio" name="radio-group">
+                <div class="radio-button">
+                    <label>November 16 <strong>tomorrow</strong></label>
+                </div>
+            </label>
+        
+            <label class="radio-container">
+                <input type="radio" name="radio-group">
+                <div class="radio-button">
+                    <label>November 17 <strong>friday</strong> </label>
+                </div>
+            </label>
+        
+            <label class="radio-container">
+                <input type="radio" name="radio-group">
+                <div class="radio-button">
+                    <label><strong>Select a date:</strong></label>
+                </div>
+            </label>
+              
+     
+            <button class="btn cart-btn">buy now</button>
+            <button class="btn">add to cart</button>
         </div>
     </section>
 
-    <section class="detail-des">
-        <h2 class="heading">description</h2>
-        <p class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officia molestiae quam nihil nisi illo enim consectetur dolorum sed, libero sunt saepe expedita accusamus eum, ullam possimus laborum magnam fugiat?</p>
-    </section>
+   
 
     <!------------- Product catalog ----------------------->
     <section class="product">
@@ -255,10 +275,12 @@
     </section>
     
     <footer></footer>
-<!-----------importing the static templates----------------------->
+<!-----------importing reusable templates----------------------->
     <script src="js-files/nav.js"></script>
     <script src="js-files/footer.js"></script>
     <script src="js-files/home.js"></script>
     <script src="js-files/product.js"></script>
+
+
 </body>
 </html>

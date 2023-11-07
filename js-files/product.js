@@ -11,16 +11,3 @@ productImages.forEach((item, i) => { // loopinh through each image thumb
         activeImageSlide = i; // updating the image slider variable to track current thumb
     })
 })
-
-// toogle size button
-
-const sizeBtns = document.querySelectorAll('.size-radio-btn');
-let checkedBtn = 0;
-
-sizeBtns.forEach((item, i) => {
-    item.addEventListener('click', () =>{
-        sizeBtns[checkedBtn].classList.remove('check');
-        item.classList.add('check');
-        checkedBtn = i;
-    })
-})

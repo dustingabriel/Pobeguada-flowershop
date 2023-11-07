@@ -59,6 +59,10 @@
     margin-right: 40px;
 }
 
+.product-image img{
+    cursor: pointer;
+}
+
 .product-image{
     position: relative;
     width: 100%;
@@ -139,7 +143,7 @@
     text-decoration: line-through;
 }
 
-/* -------------Previous and next Button on the Best seller Catalog style ----------*/
+/* -------------Previous and next Button style ----------*/
 .pre-btn, .nxt-btn{
     border: none;
     width: 10vw;
