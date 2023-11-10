@@ -10,15 +10,23 @@ const createNav = () => {
                     <a href="search.html"><input type="submit" class="search-btn" value="Search"></a>
                 </div>
                 <a href="#"><img src="img/user.png" alt=""></a>
-                <a href="#"><img src="img/cart.png" alt=""></a>
+                <a href="cart.html"><img src="img/cart.png" alt=""></a>
             </div>
         </div>
         <ul class="links-container">
             <li class="link-item"><a href="index.html" class="link">home</a></li>
-            <li class="link-item"><a href="flowercollection.html" class="link">Anniversary</a></li>
-            <li class="link-item"><a href="#" class="link">birthdays</a></li>
-            <li class="link-item"><a href="plantscollection.html" class="link">Plants</a></li>
-            <li class="link-item"><a href="#" class="link">Gift set</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Shop
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="allproducts.html">All Products</a>
+                <a href="flowercollection.html">Bouquet Collection</a>
+                <a href="plantscollection.html">Plants Collection</a>
+                <a href="giftset.html">Gift Set</a>
+                </div>
+            </div>
+            <li class="link-item"><a href="#" class="link">Contact Us</a></li>
         </ul>
     `;
     

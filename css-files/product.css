@@ -47,7 +47,8 @@
 
 .details .product-brand{
     text-transform: capitalize;
-    font-size: 28px;
+    font-family: Avenir Next,sans-serif;
+    font-size: 35px;
 }
 
 .details .product-short-des{
