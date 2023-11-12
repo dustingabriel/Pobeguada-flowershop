@@ -133,3 +133,38 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+/* search box content */
+
+  
+#myUL {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+#myUL li {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+#myUL li:last-child {
+    border-bottom: none;
+  }
+  
+#myUL li:hover {
+    background-color: #ddd;
+  }
+  
+  /* Display the dropdown when the search box is focused or has content */
+  .search-box:focus + #myUL,
+  .search-box:valid + #myUL {
+    display: block;
+  }
