@@ -1,43 +1,15 @@
 .product-details{
     width: 100%;
-    padding:60px 10vw;
+    padding:60px 20vw;
     display: flex;
     justify-content: space-between;
 
 }
 
-.image-sliders{
-    width: 500px;
-    height: 500px;
-    position: relative;
-    background-image: url(../img/product\ image\ 1.png);
-    background-size: cover;
-}
-
-.product-images{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    background: #fff;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    height: 100px;
-    grid-gap: 10px;
-    padding: 10px;
-}
-
 .product-images img{
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.product-images img.active{
-    opacity: 0.5;
+    width: 500px;
+    height: 600px;
+    position: relative;
 }
 
 .details{
@@ -84,66 +56,24 @@
     font-weight: 300;
 }
  
-/* Style for the radio buttons */
-.radio-container {
-    display: inline-table;
-    margin-right: 20px;
-}
-
-/* Hide the default radio button */
-.radio-container input[type="radio"] {
-    display: none;
-}
-
-/* Style for the custom radio button */
-.radio-button {
-    width: 145px;
-    height: 80px;
-    background-color: #fff;
-    border: 1px solid #383838;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* Style for the description inside the button */
-.radio-button label {
-    display: block;
-    text-align: center;
-    margin: 10px 0;
-}
-
-/* Style for the checked custom radio button */
-.radio-container input[type="radio"]:checked + .radio-button {
-    background-color: #383838;
-}
-
-/* Style for the checked description inside the button */
-.radio-container input[type="radio"]:checked + .radio-button label {
-    color: #fff;
-}
-
-.calendar {
-    display: none;
-}
 
 .btn{
-    width: 45%;
+    width: 40%;
     padding: 15px;
     border-radius: 5px;
     background: none;
+    display:grid;
     border: 1px solid #383838;
     color: #383838;
     font-size: 15px;
     cursor: pointer;
-    margin: 20px 0;
+    margin-top: 10px;
     text-transform: capitalize;
 }
 
 .cart-btn{
     margin-right: 1%;
+    margin-top: 50px;
     background: #383838;
     color: #fff;
 }

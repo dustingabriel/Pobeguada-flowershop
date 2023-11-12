@@ -3,7 +3,7 @@ footer{
     width: 100%;
     padding: 40px 10vw;
     padding-bottom: 80px;
-    background: #FF9899;
+    background: #c9393c;
 }
 
 .footer-content{
@@ -41,7 +41,6 @@ footer{
 
 .footer-link{
     text-decoration: none;
-    text-transform: capitalize;
     color: rgba(255, 255, 255, 0.75);
 }
 

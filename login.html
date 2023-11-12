@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobeguada Log In</title>
+
+    <link rel="stylesheet" href="css-files/signup.css">
+
+</head>
+<body>
+
+    <img src="img/loader.gif" class="loader" alt="">
+
+    <div class="alert-box">
+        <img src="img/error.png" class="alert-img" alt="">
+        <p class="alert-msg">Error message</p>
+    </div>
+     
+    <form id ="mainForm" class="w-25 m-4">
+    <div class="container">
+        <img src="img/dark-logo.png" class="logo" alt="">
+        <div>
+            <input type="email" autocomplete="off" id="email" placeholder="email">
+            <input type="password" autocomplete="off" id="password" placeholder="password">
+            <button type="submit" class="submit-btn">log in</button>
+        </div>
+        <a href="signup.html" class="link">don't have an account? Create one</a>
+    </div>
+    </form>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDDnWhG2Z9BotUIytaJQT17FJD_PVbmMWM",
+          authDomain: "pobeguada-login.firebaseapp.com",
+          databaseURL: "https://pobeguada-login-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "pobeguada-login",
+          storageBucket: "pobeguada-login.appspot.com",
+          messagingSenderId: "92932274899",
+          appId: "1:92932274899:web:9c7ce005f6ac789a5c7226"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore();
+        const auth = getAuth(app);
+
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let mainForm = document.getElementById('mainForm');
+
+        let SignInUser = evt => {
+            evt.preventDefault();
+            
+            signInWithEmailAndPassword(auth, email.value, password.value)
+            .then(async (credentials)=>{
+                var ref = doc(db, "UserAuthList", credentials.user.uid);
+                const docSnap = await getDoc(ref);
+
+                if(docSnap.exists()){
+                    sessionStorage.setItem("user-info", JSON.stringify({
+                        username: docSnap.data().username,
+                        usernumber: docSnap.data().usernumber,
+                    }))
+                    sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
+                    window.location.href = "index.html"
+                }
+            })
+            .catch((error)=>{
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
+        }
+
+        mainForm.addEventListener('submit', SignInUser);
+      </script>
+    
+</body>
+</html>
