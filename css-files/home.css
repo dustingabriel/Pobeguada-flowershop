@@ -12,7 +12,7 @@
 }
 
 .hero-section .logo{
-    height: 150px;
+    height: 200px;
     display: block;
     margin: auto;
 }
@@ -25,6 +25,86 @@
     font-size: 35px;
     font-weight: 300;
 }
+
+
+/*---------------------------collections hero style--------------------------------*/
+.hero-section-plants{
+    width: 100%;
+    height: calc(65vh - 120px);
+    background-image: url('../img/plants-collection.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-section-plants .sub-heading-plants{
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.hero-section-flowers{
+    width: 100%;
+    height: calc(65vh - 120px);
+    background-image: url('../img/flower-collection.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-section-flowers .sub-heading-flowers{
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.hero-section-giftset{
+    width: 100%;
+    height: calc(65vh - 120px);
+    background-image: url('../img/gift-sets.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-section-giftset .sub-heading-giftset{
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.hero-section-allproducts{
+    width: 100%;
+    height: calc(40vh - 120px);
+    background-image: url('../img/gift-sets.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-section-allproducts .sub-heading-allproducts{
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 300;
+}
+.hero-section-allproducts .logo{
+    height: 120px;
+    display: block;
+    margin: auto;
+}
+
 
 /* ----------------------------product style -----------------------------*/
 .product{

@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <Title>Pobeguada Flower Store</Title>
-    <link rel="stylesheet" href="css-files/home.css">
-
-
+    <title>Product Page</title>
+    <link rel="stylesheet " href="css-files/home.css">
+    <link rel="stylesheet " href="css-files/product.css">
 </head>
 <body>
-
     <nav class="navbar"></nav>
- <!---hero section-------->  
-    <header class="hero-section">
-        <div class="content">
-            <img src="img/light-logo.png" class="logo" alt="">
-            <p class="sub-heading">Shop our online store</p>
+    
+    <section class="product-details">
+        <div class="product-images">
+            <img src="img/tulip.png" class="active" alt="">
         </div>
-    </header>   
-    <!--  -------------------cards containers------------------------------------------>
+        <div class="details">
+            <h2 class="product-brand">Tulip Bouquet</h2>
+            <p class="product-short-des">Tulips come in various colors, each carrying its own significance. For instance, red tulips convey love, while yellow tulips represent cheerful thoughts, making them versatile for different occasions. 
+            </p>
+            <span class="product-price">₱450</span>
+            <span class="product-actual-price">₱500</span>
+            <span class="product-discount">10% off!</span>
+
+            <button class="btn cart-btn">buy now</button>
+            <button class="btn">add to cart</button>
+        </div>
+    </section>
+
+   
+
+    <!------------- Product catalog ----------------------->
     <section class="product">
-        <h2 class="product-category">Grand Sale</h2>
+        <h2 class="product-category">You may also like:</h2>
         <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
         <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
         <div class="product-container">
@@ -121,51 +131,14 @@
             </div>
         </div>
     </section>
-    <!-- ---------------------collections -------------------------------------->
-<section class="collection-container">
-    <a href="flowercollection.html" class="collection">
-        <img src="img/flower-collection.png" alt="">
-        <p class="collection-title">Flower<br> collection</p>
-    </a>
-    <a href="plantscollection.html" class="collection">
-        <img src="img/plants-collection.png" alt="">
-        <p class="collection-title">plants <br> collection</p>
-    </a>
-    <a href="giftset.html" class="collection">
-        <img src="img/gift-sets.png" alt="">
-        <p class="collection-title">gift sets</p>
-    </a>
-</section>
-<!-- Reusable footer for the whole website--------------------------------------------->
-<footer></footer>
-
-<!--Call respective javascript files to apply functions of the website -->
+    
+    <footer></footer>
+<!-----------importing reusable templates----------------------->
     <script src="js-files/nav.js"></script>
-    <script src="js-files/home.js"></script>
     <script src="js-files/footer.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyACTq2o6XTmoWj4_ChmBgp0xAjkzadVLVk",
-          authDomain: "pobeguada.firebaseapp.com",
-          projectId: "pobeguada",
-          storageBucket: "pobeguada.appspot.com",
-          messagingSenderId: "288272288691",
-          appId: "1:288272288691:web:c5b87ca1e321f2bd8459c6",
-          measurementId: "G-D2MZHWEXTJ"
-        };
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+    <script src="js-files/home.js"></script>
+    <script src="js-files/product.js"></script>
+
+
 </body>
-
-
 </html>

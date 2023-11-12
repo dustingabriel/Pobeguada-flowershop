@@ -26,7 +26,7 @@ const createNav = () => {
                 <a href="giftset.html">Gift Set</a>
                 </div>
             </div>
-            <li class="link-item"><a href="#" class="link">Contact Us</a></li>
+            <li class="link-item"><a href="aboutus.html" class="link">About Us</a></li>
         </ul>
     `;
     
