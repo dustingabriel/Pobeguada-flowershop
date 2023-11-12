@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants Collection</title>
 
-    <Title>Pobeguada Flower Store</Title>
     <link rel="stylesheet" href="css-files/home.css">
-
-
+    <link rel="stylesheet" href="css-files/search.css">
 </head>
 <body>
-
     <nav class="navbar"></nav>
- <!---header main page -------->  
-    <header class="hero-section">
-        <div class="content">
-            <img src="img/light-logo.png" class="logo" alt="">
-            <p class="sub-heading">Shop our online store</p>
-        </div>
-    </header>   
-    <!--  -------------------cards containers------------------------------------------>
-    <section class="product">
-        <h2 class="product-category">Grand Sale</h2>
-        <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
-        <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
+    
+    <section class="search-results"> 
+        <h2 class="heading"><span>Flower Collection</span></h2>
         <div class="product-container">
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">15% off</span>
-                    <a href="products/product.html"><img src="img/card1.png" class="product-thumb" alt=""></a>
+                    <a href="product.html"><img src="img/card1.png" class="product-thumb" alt=""></a>
                     <button class="card-btn">Add to Cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">White</h2>
+                    <h2 class="product-brand">brand</h2>
                     <p class="product-short-des">a short line about the boquet..</p>
                     <span class="price">₱450</span><span class="actual-price">₱500</span>
                 </div>
@@ -121,51 +112,12 @@
             </div>
         </div>
     </section>
-    <!-- ---------------------collections -------------------------------------->
-<section class="collection-container">
-    <a href="flowercollection.html" class="collection">
-        <img src="img/women-collection.png" alt="">
-        <p class="collection-title">flowers <br> collection</p>
-    </a>
-    <a href="plantscollection.html" class="collection">
-        <img src="img/men-collection.png" alt="">
-        <p class="collection-title">plants <br> collection</p>
-    </a>
-    <a href="#" class="collection">
-        <img src="img/accessories-collection.png" alt="">
-        <p class="collection-title">gift sets</p>
-    </a>
-</section>
-<!-- Reusable footer for the whole website--------------------------------------------->
-<footer></footer>
 
-<!--Call respective javascript files to apply functions of the website -->
+
+    
+    <footer></footer>
     <script src="js-files/nav.js"></script>
     <script src="js-files/home.js"></script>
     <script src="js-files/footer.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyACTq2o6XTmoWj4_ChmBgp0xAjkzadVLVk",
-          authDomain: "pobeguada.firebaseapp.com",
-          projectId: "pobeguada",
-          storageBucket: "pobeguada.appspot.com",
-          messagingSenderId: "288272288691",
-          appId: "1:288272288691:web:c5b87ca1e321f2bd8459c6",
-          measurementId: "G-D2MZHWEXTJ"
-        };
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
 </body>
-
-
 </html>

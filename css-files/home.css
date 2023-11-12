@@ -3,7 +3,7 @@
 /*---------------------------main header style--------------------------------*/
 .hero-section{
     width: 100%;
-    height: calc(50vh - 120px);
+    height: calc(100vh - 120px);
     background-image: url('../img/header.png');
     background-size: cover;
     display: flex;
@@ -57,6 +57,10 @@
     width: 250px;
     height: 450px;
     margin-right: 40px;
+}
+
+.product-image img{
+    cursor: pointer;
 }
 
 .product-image{
@@ -139,7 +143,7 @@
     text-decoration: line-through;
 }
 
-/* -------------Previous and next Button on the Best seller Catalog style ----------*/
+/* -------------Previous and next Button style ----------*/
 .pre-btn, .nxt-btn{
     border: none;
     width: 10vw;
