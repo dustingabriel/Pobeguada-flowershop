@@ -84,8 +84,8 @@
 
 .hero-section-allproducts{
     width: 100%;
-    height: calc(40vh - 120px);
-    background-image: url('../img/gift-sets.png');
+    height: calc(40vh - 100px);
+    background-image: url('../img/allproducts.png');
     background-size: cover;
     display: flex;
     justify-content: center;
