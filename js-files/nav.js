@@ -65,7 +65,7 @@ function createNav() {
             <img src="img/dark-logo.png" class="brand-logo" alt="">
             <div class="nav-items">
                 <div class="search">
-                    <input type="text" id="myInput" oninput="myFunction()" onkeydown="checkEnter(event)" placeholder="Search for names.." title="Type in a name">
+                    <input type="text" id="myInput" oninput="myFunction()" onkeydown="checkEnter(event)" placeholder="Search for product" title="Type in a name">
                     <ul id="myUL">
                       <li><a href="product-bonsai.html">Bonsai Tree</a></li>
                       <li><a href="product-booklover.html">Book Lover Gift Set</a></li>
