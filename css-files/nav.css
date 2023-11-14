@@ -25,55 +25,30 @@
 }
 
 .nav-items{
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
-.search{
-    width: 500px;
-    display: flex;
+.search {
+  position: relative;
+  width: 500px;
+  display: inline-block;
 }
 
-.search-box{
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #d1d1d1;
-    text-transform: capitalize;
-    background: none;
-    color: #a9a9a9;
-    outline: none;
-}
 
-.search-btn{
-    width: 100%;
-    height: 40px;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: #383838;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 15px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
 
 .search-box::placeholder{
     color: #a9a9a9;
 }
 
 .nav-items a{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .nav-items a img{
     width: 30px;
 }
-
+/*links content*/
 .links-container{
     width: 100%;
     display: flex;
@@ -136,35 +111,41 @@
 
 
 /* search box content */
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
 
-  
 #myUL {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: none; /* Initially hide the dropdown */
-    position: absolute;
-    z-index: 1;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-#myUL li {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-  }
-  
-#myUL li:last-child {
-    border-bottom: none;
-  }
-  
-#myUL li:hover {
-    background-color: #ddd;
-  }
-  
-  /* Display the dropdown when the search box is focused or has content */
-  .search-box:focus + #myUL,
-  .search-box:valid + #myUL {
-    display: block;
-  }
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute; /* Position the results absolutely */
+  width: 100%; /* Make it span the width of the search container */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box shadow for a dropdown-like effect */
+  z-index: 1; /* Ensure it appears above other elements */
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
