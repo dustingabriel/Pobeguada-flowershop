@@ -85,7 +85,43 @@ function createNav() {
                     </ul>
                 </div>
                 <a href="login.html"><img src="img/user.png" alt=""></a>
-                <a href="cart.html"><img src="img/cart.png" alt=""></a>
+                <div class="iconCart">
+                    <img src="img/cart.png">
+                    <div class="totalQuantity">0</div>
+                </div>
+                <div class="cart">
+                <h2>
+                    CART
+                </h2>
+        
+                <div class="listCart" id="cartItems">
+        
+        
+                    <div class="item">
+                        
+                        <div class="content">
+                            
+                        </div>
+                        <div class="quantity">
+                            
+                           
+                            
+                        </div>
+                    </div>
+        
+        
+                </div>
+        
+                <div class="buttons">
+                    <div class="close">
+                        CLOSE
+                    </div>
+                    <div class="checkout">
+                        <a href="checkout.html">CHECKOUT</a>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
         
