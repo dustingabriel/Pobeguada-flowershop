@@ -10,9 +10,44 @@ const createNav = () => {
                     <a href="search.html"><input type="submit" class="search-btn" value="Search"></a>
                 </div>
                 <a href="#"><img src="img/user.png" alt=""></a>
-                <a href="cart.html"><img src="img/cart.png" alt=""></a>
+                <div class="iconCart">
+                <img src="img/cart.png">
+                <div class="totalQuantity">0</div>
+            </div>
+        
+            <div class="cart">
+                <h2>
+                    CART
+                </h2>
+                <div class="listCart">
+                <div class="item">
+                    <img src="img/booklover.png">
+                        <div class="content">
+                            <div class="name">CoPilot / Black / Automatic</div>
+                            <div class="price">$550 / 1 product</div>
+                        </div>
+                        <div class="quantity">
+                            <button>-</button>
+                            <span class="value">3</span>
+                            <button>+</button>
+                        </div>
+                </div>
+        
+        
+                </div>
+        
+                <div class="buttons">
+                    <div class="close">
+                        CLOSE
+                    </div>
+                    <div class="checkout">
+                        <a href="checkout.html">CHECKOUT</a>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
+        
         <ul class="links-container">
             <li class="link-item"><a href="index.html" class="link">home</a></li>
             <div class="dropdown">
@@ -29,6 +64,10 @@ const createNav = () => {
             <li class="link-item"><a href="aboutus.html" class="link">About Us</a></li>
         </ul>
     `;
+
+const scriptElement = document.createElement('script');
+// Set the src attribute
+scriptElement.src = 'js-files/app.js';
     
 }
 createNav();
