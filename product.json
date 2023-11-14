@@ -1,28 +1,28 @@
 [
     {
         "id": 1,
-        "name": "Product 1",
-        "price": 520,
-        "image": "images/1.webp"
+        "name": "Roses",
+        "price": 2000,
+        "image": "img/redrose.png"
     },
     {
         "id": 2,
-        "name": "Product 2",
-        "price": 220,
-        "image": "images/2.webp"
+        "name": "Sunflower",
+        "price": 2220,
+        "image": "img/sunflower.png"
     },
     {
         "id": 3,
-        "name": "Product 3",
-        "price": 250,
-        "image": "images/3.webp"
+        "name": "Succulent",
+        "price": 2500,
+        "image": "img/succulent.png"
     }
     ,
     {
         "id": 4,
-        "name": "Product 4",
-        "price": 420,
-        "image": "images/4.webp"
+        "name": "Bonsai",
+        "price": 4200,
+        "image": "img/bonsai.png"
     },
     {
         "id": 5,
