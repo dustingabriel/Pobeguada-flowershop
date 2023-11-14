@@ -35,13 +35,34 @@ const flowerData = [
         "name": "Product 6",
         "price": 120,
         "image": "images/6.webp"
+    },
+    {
+        "id": 7,
+        "name": "Product 6",
+        "price": 120,
+        "image": "images/6.webp"
+    },
+    {
+        "id": 8,
+        "name": "Product 6",
+        "price": 120,
+        "image": "images/6.webp"
     }
 ]
+
 
 const productContainers = [...document.querySelectorAll('.product-container')]
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')]
 const preBtn = [...document.querySelectorAll('.pre-btn')]
 
+function addToCart(flowerId) {
+    const selectedFlower = flowerData.find(flower => flower.id === flowerId);
+    if (selectedFlower) {
+        const cartItem = document.createElement('li');
+        cartItem.textContent = `${selectedFlower.name} - ${selectedFlower.price} INR`;
+        cartContainer.appendChild(cartItem);
+    }
+}
 // Function to render flower data
 function renderFlowers() {
     // Target the flower-card div
@@ -56,7 +77,7 @@ function renderFlowers() {
                     <a href="product-${flower.id}.html">
                         <img src="${flower.image}" class="product-thumb" alt="" />
                     </a>
-                    <button class="card-btn">Add to Cart</button>
+                    <button class="card-btn" onclick="addToCart(${flower.id})">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2>${flower.name}</h2>
@@ -90,3 +111,4 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("panget si dacio")
     renderFlowers()
 });
+

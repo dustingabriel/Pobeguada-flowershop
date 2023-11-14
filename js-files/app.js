@@ -1,3 +1,5 @@
+
+
 let iconCart = document.querySelector('.iconCart');
 let cart = document.querySelector('.cart');
 let cartContainer = document.querySelector('.cart-container');
