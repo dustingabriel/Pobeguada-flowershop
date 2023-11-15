@@ -1,66 +1,65 @@
 // Function to filter and display matching items in a list based on user input
 function myFunction() {
-    // Get the input element and user input
-    var input = document.getElementById("myInput");
-    var filter = input.value.toUpperCase();
+  // Get the input element and user input
+  var input = document.getElementById("myInput");
+  var filter = input.value.toUpperCase();
 
-    // Get the unordered list and list items
-    var ul = document.getElementById("myUL");
-    var li = ul.getElementsByTagName("li");
+  // Get the unordered list and list items
+  var ul = document.getElementById("myUL");
+  var li = ul.getElementsByTagName("li");
 
-    // Toggle the visibility of the list based on input
-    ul.style.display = (filter === "") ? "none" : "block";
+  // Toggle the visibility of the list based on input
+  ul.style.display = filter === "" ? "none" : "block";
 
-    // Loop through each list item, hide or display based on the filter
-    for (var i = 0; i < li.length; i++) {
-        var a = li[i].getElementsByTagName("a")[0];
-        var txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
+  // Loop through each list item, hide or display based on the filter
+  for (var i = 0; i < li.length; i++) {
+    var a = li[i].getElementsByTagName("a")[0];
+    var txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
     }
+  }
 }
 
 // Function to check if the Enter key is pressed and take action accordingly
 function checkEnter(event) {
-    if (event.key === "Enter") {
-        // Get the user input and convert it to uppercase
-        var filter = document.getElementById("myInput").value.toUpperCase();
+  if (event.key === "Enter") {
+    // Get the user input and convert it to uppercase
+    var filter = document.getElementById("myInput").value.toUpperCase();
 
-        // Redirect to 404 page if there are no matching results and input is not empty
-        if (!hasMatchingResults(filter) && filter !== "") {
-            window.location.href = "404.html";
-        }
+    // Redirect to 404 page if there are no matching results and input is not empty
+    if (!hasMatchingResults(filter) && filter !== "") {
+      window.location.href = "404.html";
     }
+  }
 }
 
 // Function to check if there are matching results in the list
 function hasMatchingResults(filter) {
-    // Get the unordered list and list items
-    var ul = document.getElementById("myUL");
-    var li = ul.getElementsByTagName("li");
+  // Get the unordered list and list items
+  var ul = document.getElementById("myUL");
+  var li = ul.getElementsByTagName("li");
 
-    // Loop through each list item, return true if a match is found
-    for (var i = 0; i < li.length; i++) {
-        var a = li[i].getElementsByTagName("a")[0];
-        var txtValue = a.textContent || a.innerText;
+  // Loop through each list item, return true if a match is found
+  for (var i = 0; i < li.length; i++) {
+    var a = li[i].getElementsByTagName("a")[0];
+    var txtValue = a.textContent || a.innerText;
 
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            return true;
-        }
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      return true;
     }
+  }
 
-    // Return false if no match is found
-    return false;
+  // Return false if no match is found
+  return false;
 }
 
-
 function createNav() {
-    let nav = document.querySelector('.navbar');
+  let nav = document.querySelector(".navbar");
 
-    nav.innerHTML = `
+  nav.innerHTML = `
         <div class="nav">
             <img src="img/dark-logo.png" class="brand-logo" alt="">
             <div class="nav-items">
@@ -117,7 +116,7 @@ function createNav() {
                         CLOSE
                     </div>
                     <div class="checkout">
-                        <a href="checkout.html">CHECKOUT</a>
+                        <button onclick="checkout()">CHECKOUT</button>
                     </div>
                 </div>
             </div>
@@ -141,7 +140,6 @@ function createNav() {
             <li class="link-item"><a href="aboutus.html" class="link">About Us</a></li>
         </ul>
     `;
-
 }
 
 createNav();
