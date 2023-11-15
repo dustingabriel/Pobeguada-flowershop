@@ -58,9 +58,13 @@ function updateCheckoutSummary() {
 function checkout() {
   // Perform your checkout logic here
   // For demonstration purposes, we'll log the cart items to the console
-  console.log("checkout?");
   const cartItems = getCartItems();
   console.log("Checkout - Cart Items:", cartItems);
+
+  //checker if cartItems array is present, then set the data to the local storage
+  if (cartItems.length) {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }
 
   // After checkout, you may want to clear the cart or perform other actions
   // Clearing the cart is just an example, you need to implement your own logic
