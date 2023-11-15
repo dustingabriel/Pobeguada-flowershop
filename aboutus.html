@@ -1,46 +1,109 @@
-<div class="nav">
-    <img src="img/dark-logo.png" class="brand-logo" alt="">
-    <div class="nav-items">
-        <div class="search">
-            <input type="text" id="myInput" oninput="myFunction()" onkeydown="checkEnter(event)" placeholder="Search for names.." title="Type in a name">
-            <ul id="myUL">
-              <li><a href="product-bonsai.html">Bonsai Tree</a></li>
-              <li><a href="product-booklover.html">Book Lover Gift Set</a></li>
-              <li><a href="product-fiddle.html">Fiddle leaf</a></li>
-              <li><a href="product-gourmet.html">Gourmet Gift Set</a></li>
-              <li><a href="product-hydrangea.html">Hydrangea</a></li>
-              <li><a href="product-newparent.html">New Parent Gift Set</a></li>
-              <li><a href="product-orchid.html">Orchid</a></li>
-              <li><a href="product-redrose.html">Roses</a></li>
-              <li><a href="product-snake.html">Snake Plant</a></li>
-              <li><a href="product-spagift.html">Spa Gift Set</a></li>
-              <li><a href="product-succulent.html">Succulent</a></li>
-              <li><a href="product-sunflower.html">Sunflower</a></li>
-              <li><a href="product-travel.html">Travel Gift Set</a></li>
-              <li><a href="product-tulip.html">Tulip</a></li>
-              <li><a href="product-wildflower.html">Wildflower</a></li>
-            </ul>
-        </div>
-        <a href="login.html"><img src="img/user.png" alt=""></a>
-        <div class="iconCart">
-            <img src="img/cart.png">
-            <div class="totalQuantity">0</div>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
 
-<ul class="links-container">
-    <li class="link-item"><a href="index.html" class="link">home</a></li>
-    <div class="dropdown">
-        <button class="dropbtn">Shop
-        <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="allproducts.html">All Products</a>
-            <a href="flowercollection.html">Flowers Collection</a>
-            <a href="plantscollection.html">Plants Collection</a>
-            <a href="giftset.html">Gift Set</a>
+        .about-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .about-content {
+            line-height: 1.6;
+        }
+
+        .team-member {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .team-member img {
+            max-width: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .team-member-details {
+            flex: 1;
+        }
+
+        .team-member-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .team-member-role {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-container">
+        <div class="about-title">About Us</div>
+
+        <div class="about-content">
+            <p>Welcome to our website! We are the POBEGUADA group from section CPE201 - Software Design.<br> This project will be submitted on November 16, 2023</p>
+
+            <p>We created this website in Partial fulfillment for the Requirements of Software Design Course.</p>
+
+            <p>Meet our team:</p>
+
+            <div class="team-member">
+                <img src="https://www.facebook.com/photo/?fbid=5298819223467945&set=a.166698563346729" alt="Team Member 1">
+                <div class="team-member-details">
+                    <div class="team-member-name">Ozzy Moises Beringuel</div>
+                    <div class="team-member-role">Back-End Developer</div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="team-member2.jpg" alt="Team Member 2">
+                <div class="team-member-details">
+                    <div class="team-member-name">Fiona Winslette Dantes</div>
+                    <div class="team-member-role">Marketing Manager</div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="team-member1.jpg" alt="Team Member 1">
+                <div class="team-member-details">
+                    <div class="team-member-name">Joshua Raphael Guarin</div>
+                    <div class="team-member-role">Co-Founder</div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="team-member2.jpg" alt="Team Member 2">
+                <div class="team-member-details">
+                    <div class="team-member-name">Dustin Gabriel Portes</div>
+                    <div class="team-member-role">Front-End Developer</div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <li class="link-item"><a href="aboutus.html" class="link">About Us</a></li>
-</ul>
+
+</body>
+</html>

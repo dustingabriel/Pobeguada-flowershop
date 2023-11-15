@@ -85,7 +85,7 @@ function createNav() {
                 </div>
                 <a href="login.html"><img src="img/user.png" alt=""></a>
                 <div class="iconCart">
-                    <img src="img/cart.png">
+                    <a href = "cart.html"><img src="img/cart.png"></a>
                     <div class="totalQuantity">0</div>
                 </div>
                 <div class="cart">
@@ -119,6 +119,7 @@ function createNav() {
                         <a href="checkout.html" onclick="checkout()">CHECKOUT</a>
                     </div>
                 </div>
+          
             </div>
 
             </div>

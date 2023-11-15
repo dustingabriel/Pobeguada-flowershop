@@ -17,10 +17,12 @@
     </header>
     <!--  -------------------cards containers------------------------------------------>
     <section class="product">
-      <h2 class="product-category">Grand Sale</h2>
+      <h2 class="product-category">Featured Products</h2>
       <button class="pre-btn"><img src="img/arrow.png" alt="" /></button>
       <button class="nxt-btn"><img src="img/arrow.png" alt="" /></button>
-      <div class="product-container" id="flower-details"></div>
+      <div class="product-container" id="flower-details">
+        <!-- Content will be dynamically added here using JavaScript -->
+      </div>
     </section>
     <!-- ---------------------collections -------------------------------------->
     <section class="collection-container">
@@ -81,6 +83,8 @@
             // Call the function for the initial rendering
             renderFlowersInRange(1,7);
         });
+        
+        
     </script>
     
   </body>
