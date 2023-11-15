@@ -202,6 +202,8 @@
     text-transform: uppercase;
 }
 
+
+
 .product-short-des{
     width: 100%;
     height: 20px;
@@ -223,7 +225,7 @@
     text-decoration: line-through;
 }
 
-/* -------------Previous and next Button style ----------*/
+/* -------------Previous and Next Button style ----------*/
 .pre-btn, .nxt-btn{
     border: none;
     width: 10vw;
@@ -255,7 +257,7 @@
     opacity: 1;
 }
 
-/* -------------------------- Categories---------------------------------*/
+/* -------------------------- Categories layout---------------------------------*/
 
 .collection-container{
     width: 100%;
