@@ -76,24 +76,34 @@ function createCartItem(selectedFlower, flowerId, quantity) {
   return cartItem;
 }
 
-function incrementQuantity(cartItem) {
+function incrementQuantity(flowerId) {
+  const cartItem = Array.from(cartContainer.children).find(
+      (item) => item.dataset.flowerId === String(flowerId)
+  );
   const quantityElement = cartItem.querySelector(".quantity span.value");
   const quantity = parseInt(quantityElement.textContent, 10) + 1;
   quantityElement.textContent = quantity;
+
+  updateTotalQuantity();
+  saveCart();
 }
 
-function decrementQuantity(cartItem) {
+function decrementQuantity(flowerId) {
+  const cartItem = Array.from(cartContainer.children).find(
+      (item) => item.dataset.flowerId === String(flowerId)
+  );
   const quantityElement = cartItem.querySelector(".quantity span.value");
   let quantity = parseInt(quantityElement.textContent, 10);
 
   if (quantity > 1) {
-    quantity--;
-    quantityElement.textContent = quantity;
+      quantity--;
+      quantityElement.textContent = quantity;
   } else {
-    cartContainer.removeChild(cartItem);
+      cartContainer.removeChild(cartItem);
   }
 
   updateTotalQuantity();
+  saveCart();
 }
 
 function updateTotalQuantity() {
