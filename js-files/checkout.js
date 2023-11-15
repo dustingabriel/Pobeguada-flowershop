@@ -32,6 +32,7 @@ function getCartItems() {
   return itemsArray;
 }
 
+let listCart = [];
 
 function calculateTotalQuantity(cartItems) {
   return cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -42,8 +43,10 @@ function calculateTotalPrice(cartItems) {
 }
 
 
+
 function updateCheckoutSummary() {
   const totalQuantityElement = document.getElementById("totalQuantity");
+  const totalPriceElement = document.getElementById("totalPrice");
   const totalPriceElement = document.getElementById("totalPrice");
 
   if (!totalQuantityElement || !totalPriceElement) {
@@ -58,6 +61,7 @@ function updateCheckoutSummary() {
   totalQuantityElement.textContent = totalQuantity;
   totalPriceElement.textContent = `₱${totalPrice.toFixed(2)}`;
 }
+
 
 // Function to handle the checkout process
 function checkout() {
