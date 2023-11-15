@@ -331,3 +331,7 @@
   font-size: large;
   font-weight: bold;
 }
+
+.returnCart .item .info{
+  color: #000;
+}

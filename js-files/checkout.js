@@ -32,28 +32,52 @@ function getCartItems() {
   return itemsArray;
 }
 
-// Function to calculate total quantity of items in the cart
+
+
 function calculateTotalQuantity() {
-  const cartItems = getCartItems();
-  return cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemsString = localStorage.getItem("cartItems");
+
+  // Check if cartItemsString is not null or undefined
+  if (cartItemsString) {
+    const cartItems = JSON.parse(cartItemsString);
+    
+    // Ensure that cartItems is an array
+    if (Array.isArray(cartItems)) {
+      const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+      console.log("Total Quantity:", totalQuantity);
+      return totalQuantity;
+    } else {
+      console.error("Cart items in local storage is not an array.");
+    }
+  } else {
+    console.error("Cart items not found in local storage.");
+  }
+
+  return 0; // Default value if there's an issue
 }
 
-// Function to calculate the total price of items in the cart
 function calculateTotalPrice() {
   const cartItems = getCartItems();
-  return cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  console.log("Total Price:", totalPrice);
+  return totalPrice;
 }
 
-// Function to update the checkout summary on the page
+
 function updateCheckoutSummary() {
-  const totalQuantityElement = document.querySelector(".totalQuantity");
-  const totalPriceElement = document.querySelector(".totalPrice");
+  const totalQuantityElement = document.getElementById("totalQuantity");
+  const totalPriceElement = document.getElementById("totalPrice"); // Assuming .totalPrice is a unique class
+
+  if (!totalQuantityElement || !totalPriceElement) {
+    console.error("Total quantity or total price elements not found.");
+    return;
+  }
 
   const totalQuantity = calculateTotalQuantity();
   const totalPrice = calculateTotalPrice();
+
+  console.log("Updating Checkout Summary - Total Quantity:", totalQuantity);
+  console.log("Updating Checkout Summary - Total Price:", totalPrice);
 
   totalQuantityElement.textContent = totalQuantity;
   totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
@@ -93,7 +117,7 @@ function createCartItemElement(item) {
     <img src="${item.image}">
     <div class="info">
       <div class="name">${item.name}</div>
-      <div class="price">$${item.price.toFixed(2)} / 1 product</div>
+      <div class="price">$${item.price.toFixed(2)}</div>
     </div>
     <div class="quantity">${item.quantity}</div>
     <div class="returnPrice">$${(item.price * item.quantity).toFixed(2)}</div>
@@ -126,3 +150,4 @@ document.addEventListener("DOMContentLoaded", function () {
 function clearLocalStorageCartItems() {
   localStorage.removeItem("cartItems");
 }
+
