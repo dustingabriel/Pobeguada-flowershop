@@ -11,84 +11,32 @@
 </head>
 <body>
     <nav class="navbar"></nav>
-<!--hero section -------->  
+
+    <!-- Hero section -->
     <header class="hero-section-flowers">
         <div class="content">
             <img src="img/flowers-collection-text.png" class="logo" alt="">
         </div>
     </header>
-<!------------------------------------------------------------------------------------------------------------------->         
-    <section class="search-results"> 
-        <div class="product-container">
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-sunflower.html"><img src="img/sunflower.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to Cart</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">sunflower</h2>
-                    <p class="product-short-des">a short line about the boquet..</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-redrose.html"><img src="img/redrose.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">Roses</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-tulip.html"><img src="img/tulip.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">succulent</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-hydrangea.html"><img src="img/hydrangea.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">hydrangea</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-wildflower.html"><img src="img/wildflower.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to Cart</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">sunflower</h2>
-                    <p class="product-short-des">a short line about the boquet..</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
+
+    <!-- Search results section -->
+    <section class="search-results">
+        <div class="product-container" id="flower-details">
+            <!-- Content will be dynamically added here using JavaScript -->
         </div>
     </section>
 
 
-    
     <footer></footer>
     <script src="js-files/nav.js"></script>
     <script src="js-files/home.js"></script>
     <script src="js-files/footer.js"></script>
     <script src="js-files/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Call the function for the initial rendering
+            renderFlowersInRange(1, 5);
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 .product-details{
     width: 100%;
-    padding:60px 20vw;
+    padding:40px 10vw;
     display: flex;
     justify-content: space-between;
 
@@ -9,7 +9,8 @@
 .product-images img{
     width: 500px;
     height: 600px;
-    position: relative;
+    position:relative;
+    
 }
 
 .details{

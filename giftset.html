@@ -18,68 +18,9 @@
         </div>
     </header>
 <!------------------------------------------------------------------------------------------------------------------->         
-    <section class="search-results"> 
-        <div class="product-container">
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-gourmet.html"><img src="img/gourmet.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to Cart</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">gourmet gift set</h2>
-                    <p class="product-short-des">a short line about the boquet..</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-travel.html"><img src="img/travel.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">Travel Gift set</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-booklover.html"><img src="img/booklover.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">Book lover gift set</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-spagift.html"><img src="img/spagift.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">spa gift set</h2>
-                    <p class="product-short-des">a short line about the boquet.</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">10% off</span>
-                    <a href="product-newparent.html"><img src="img/newparent.png" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to Cart</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-brand">new parent gift set</h2>
-                    <p class="product-short-des">a short line about the boquet..</p>
-                    <span class="price">₱450</span><span class="actual-price">₱500</span>
-                </div>
-            </div>
+    <section class="search-results">
+        <div class="product-container" id="flower-details">
+            <!-- Content will be dynamically added here using JavaScript -->
         </div>
     </section>
 
@@ -89,5 +30,11 @@
     <script src="js-files/home.js"></script>
     <script src="js-files/footer.js"></script>
     <script src="js-files/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Call the function for the initial rendering
+            renderFlowersInRange(11, 15);
+        });
+    </script>
 </body>
 </html>

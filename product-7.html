@@ -7,8 +7,7 @@
 </head>
 <body>
     <nav class="navbar"></nav>
-    
-    <section class="product-details">
+    <!-- <section class="product-details">
         <div class="product-images">
             <img src="img/hydrangea.png" class="active" alt="">
         </div>
@@ -23,8 +22,10 @@
             <button class="btn cart-btn">buy now</button>
             <button class="btn">add to cart</button>
         </div>
-    </section>
-
+    </section> -->
+    <div id="flower-details" class="product-details">
+        <!-- Content will be dynamically added here using JavaScript -->
+    </div>
    
 
     <!------------- Product catalog ----------------------->
@@ -140,6 +141,15 @@
     <script src="js-files/home.js"></script>
     <script src="js-files/product.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const flowerId = parseInt(urlParams.get('id')) || 7;
+
+            // Call the function with the specific flower ID
+            renderFlowerDetailsById(flowerId);
+        });
+    </script>
 
 </body>
 </html>

@@ -66,21 +66,21 @@ function createNav() {
                 <div class="search">
                     <input type="text" id="myInput" oninput="myFunction()" onkeydown="checkEnter(event)" placeholder="Search for product" title="Type in a name">
                     <ul id="myUL">
-                      <li><a href="product-bonsai.html">Bonsai Tree</a></li>
-                      <li><a href="product-booklover.html">Book Lover Gift Set</a></li>
-                      <li><a href="product-fiddle.html">Fiddle leaf</a></li>
-                      <li><a href="product-gourmet.html">Gourmet Gift Set</a></li>
-                      <li><a href="product-hydrangea.html">Hydrangea</a></li>
-                      <li><a href="product-newparent.html">New Parent Gift Set</a></li>
-                      <li><a href="product-orchid.html">Orchid</a></li>
-                      <li><a href="product-redrose.html">Roses</a></li>
-                      <li><a href="product-snake.html">Snake Plant</a></li>
-                      <li><a href="product-spagift.html">Spa Gift Set</a></li>
-                      <li><a href="product-succulent.html">Succulent</a></li>
-                      <li><a href="product-sunflower.html">Sunflower</a></li>
-                      <li><a href="product-travel.html">Travel Gift Set</a></li>
-                      <li><a href="product-tulip.html">Tulip</a></li>
-                      <li><a href="product-wildflower.html">Wildflower</a></li>
+                      <li><a href="product-6.html">Bonsai Tree</a></li>
+                      <li><a href="product-11.html">Book Lover Gift Set</a></li>
+                      <li><a href="product-7.html">Fiddle leaf</a></li>
+                      <li><a href="product-12.html">Gourmet Gift Set</a></li>
+                      <li><a href="product-1.html">Hydrangea</a></li>
+                      <li><a href="product-13.html">New Parent Gift Set</a></li>
+                      <li><a href="product-8.html">Orchid</a></li>
+                      <li><a href="product-2.html">Roses</a></li>
+                      <li><a href="product-9.html">Snake Plant</a></li>
+                      <li><a href="product-14.html">Spa Gift Set</a></li>
+                      <li><a href="product-10.html">Succulent</a></li>
+                      <li><a href="product-4.html">Sunflower</a></li>
+                      <li><a href="product-15.html">Travel Gift Set</a></li>
+                      <li><a href="product-3.html">Tulip</a></li>
+                      <li><a href="product-5.html">Wildflower</a></li>
                     </ul>
                 </div>
                 <a href="login.html"><img src="img/user.png" alt=""></a>

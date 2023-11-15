@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Roses</title>
+    <title>Hydrangea</title>
     <link rel="stylesheet " href="css-files/home.css">
     <link rel="stylesheet " href="css-files/product.css">
 </head>
 <body>
     <nav class="navbar"></nav>
-    
-    <section class="product-details">
-        <div class="product-images">
-            <img src="img/redrose.png" class="active" alt="">
-        </div>
-        <div class="details">
-            <h2 class="product-brand">Roses Bouquet</h2>
-            <p class="product-short-des">A classic choice for expressing love and passion, red roses are often used to convey deep emotions on special occasions like anniversaries and Valentine's Day.
-            </p>
-            <span class="product-price">₱450</span>
-            <span class="product-actual-price">₱500</span>
-            <span class="product-discount">10% off!</span>
 
-            <button class="btn cart-btn">buy now</button>
-            <button class="btn">add to cart</button>
-        </div>
-    </section>
-
-
+    <div id="flower-details" class="product-details">
+        <!-- Content will be dynamically added here using JavaScript -->
+    </div>
+   
 
     <!------------- Product catalog ----------------------->
-    <section class="product">
+    <!-- <section class="product">
         <h2 class="product-category">You may also like:</h2>
         <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
         <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
@@ -130,17 +116,38 @@
                 </div>
             </div>
         </div>
+    </section> -->
+    <section id="flower-details" class="product">
+        <h2 class="product-category">Featured Products</h2>
+        <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
+        <div class="product-container" id="featured-products">
+            <!-- Content will be dynamically added here using JavaScript -->
+        </div>
     </section>
     
-    
     <footer></footer>
-<!-----------importing reusable templates----------------------->
+<!-- Import the external JavaScript file -->
     <script src="js-files/nav.js"></script>
     <script src="js-files/footer.js"></script>
     <script src="js-files/home.js"></script>
     <script src="js-files/product.js"></script>
-    <script src="js-files/app.js"></script>
+    <script src="js-files/buttonfunction.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const flowerId = parseInt(urlParams.get('id')) || 1;
+
+            // Call the function with the specific flower ID
+            renderFlowerDetailsById(flowerId);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Call the function to render 7 random products
+            renderRandomProducts(7);
+        });
+    </script>
 
 </body>
 </html>

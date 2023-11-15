@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sunflower</title>
+    <title>Hydrangea</title>
     <link rel="stylesheet " href="css-files/home.css">
     <link rel="stylesheet " href="css-files/product.css">
 </head>
 <body>
     <nav class="navbar"></nav>
-    
-    <section class="product-details">
+    <!-- <section class="product-details">
         <div class="product-images">
-            <img src="img/sunflower.png" class="active" alt="">
+            <img src="img/hydrangea.png" class="active" alt="">
         </div>
         <div class="details">
-            <h2 class="product-brand">Sunflower Bouquet</h2>
-            <p class="product-short-des">Bright and cheerful, sunflowers symbolize happiness and adoration, making them an ideal gift for birthdays or to uplift someone's spirits</p>
+            <h2 class="product-brand">Hydrangea</h2>
+            <p class="product-short-des">The hydrangea flower is a symbol of appreciation, elegance, and beauty. The lavish amount of blooms and the spacious spherical shape also give off an aura of abundance. Its hues symbolize peace, harmony, and love. This stunning bouquet of hydrangea flowers is sure to make anyone smile, no matter the occasion!
+            </p>
             <span class="product-price">₱450</span>
             <span class="product-actual-price">₱500</span>
             <span class="product-discount">10% off!</span>
@@ -22,8 +22,10 @@
             <button class="btn cart-btn">buy now</button>
             <button class="btn">add to cart</button>
         </div>
-    </section>
-
+    </section> -->
+    <div id="flower-details" class="product-details">
+        <!-- Content will be dynamically added here using JavaScript -->
+    </div>
    
 
     <!------------- Product catalog ----------------------->
@@ -139,6 +141,15 @@
     <script src="js-files/home.js"></script>
     <script src="js-files/product.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const flowerId = parseInt(urlParams.get('id')) || 11;
+
+            // Call the function with the specific flower ID
+            renderFlowerDetailsById(flowerId);
+        });
+    </script>
 
 </body>
 </html>
