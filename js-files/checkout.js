@@ -47,7 +47,7 @@ function calculateTotalPrice(cartItems) {
 function updateCheckoutSummary() {
   const totalQuantityElement = document.getElementById("totalQuantity");
   const totalPriceElement = document.getElementById("totalPrice");
-  const totalPriceElement = document.getElementById("totalPrice");
+  
 
   if (!totalQuantityElement || !totalPriceElement) {
     console.error("Total quantity or total price elements not found.");
