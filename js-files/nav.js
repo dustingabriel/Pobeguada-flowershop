@@ -116,7 +116,7 @@ function createNav() {
                         CLOSE
                     </div>
                     <div class="checkout">
-                        <button onclick="checkout()">CHECKOUT</button>
+                        <a href="checkout.html" onclick="checkout()">CHECKOUT</a>
                     </div>
                 </div>
             </div>

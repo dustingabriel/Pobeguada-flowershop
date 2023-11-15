@@ -62,7 +62,7 @@ function createCartItem(selectedFlower, flowerId, quantity) {
   cartItem.className = "item";
   cartItem.dataset.flowerId = flowerId;
   cartItem.innerHTML = `
-      <img src="${selectedFlower.image}" alt="${selectedFlower.name}">
+      <img class="itemImage" src="${selectedFlower.image}" alt="${selectedFlower.name}">
       <div class="info">
           <div class="name">${selectedFlower.name}</div>
           <div class="price">$${selectedFlower.price} / 1 product</div>

@@ -6,11 +6,15 @@ function getCartItems() {
   cartItems.forEach((item) => {
     const nameElement = item.querySelector(".info .name");
     const priceElement = item.querySelector(".info .price");
+    const imageElement = item.querySelector(".itemImage");
+    console.log("image", imageElement)
     const quantityElement = item.querySelector(".quantity .value");
 
     // Check if all required elements are found
-    if (nameElement && priceElement && quantityElement) {
+    if (nameElement && priceElement && quantityElement && imageElement) {
       const name = nameElement.textContent.trim();
+      const image = imageElement.getAttribute('src');
+      console.log("imagevalue", image)
       const price = parseFloat(
         priceElement.textContent.replace(/\$/g, "").trim()
       );
@@ -18,6 +22,7 @@ function getCartItems() {
 
       itemsArray.push({
         name,
+        image,
         price,
         quantity,
       });
@@ -77,4 +82,47 @@ function checkout() {
   // You can redirect the user or perform other actions based on your application's logic
   // For example:
   // window.location.href = "/thank-you.html";
+}
+// Function to create HTML for a cart item and append it to the container
+function createCartItemElement(item) {
+  const cartItem = document.createElement("div");
+  cartItem.className = "item";
+
+  // Assuming you have an 'image' property in your cart items
+  cartItem.innerHTML = `
+    <img src="${item.image}">
+    <div class="info">
+      <div class="name">${item.name}</div>
+      <div class="price">$${item.price.toFixed(2)} / 1 product</div>
+    </div>
+    <div class="quantity">${item.quantity}</div>
+    <div class="returnPrice">$${(item.price * item.quantity).toFixed(2)}</div>
+  `;
+
+  return cartItem;
+}
+
+// Function to render cart items in the specified container
+function renderCartItems(container, cartItems) {
+  // Clear the existing content of the container
+  container.innerHTML = "";
+
+  // Iterate through each item in cartItems and append it to the container
+  cartItems.forEach((item) => {
+    const cartItemElement = createCartItemElement(item);
+    container.appendChild(cartItemElement);
+  });
+}
+
+// Example usage:
+document.addEventListener("DOMContentLoaded", function () {
+  const returnCartContainer = document.querySelector(".list");
+  const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Render the cart items in the specified container
+  renderCartItems(returnCartContainer, storedCartItems);
+});
+
+function clearLocalStorageCartItems() {
+  localStorage.removeItem("cartItems");
 }
