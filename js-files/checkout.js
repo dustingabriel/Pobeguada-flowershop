@@ -74,7 +74,7 @@ function checkout() {
   // After checkout, you may want to clear the cart or perform other actions
   // Clearing the cart is just an example, you need to implement your own logic
   const cartItemsContainer = document.querySelector(".listCart");
-  cartItemsContainer.innerHTML = ""; // Clear the cart items
+  //cartItemsContainer.innerHTML = ""; // Clear the cart items
 
   // Update the checkout summary after checkout
   updateCheckoutSummary();
@@ -93,7 +93,7 @@ function createCartItemElement(item) {
     <img src="${item.image}">
     <div class="info">
       <div class="name">${item.name}</div>
-      <div class="price">$${item.price.toFixed(2)}</div>
+      <div class="price">₱${item.price.toFixed(2)}</div>
     </div>
     <div class="quantity">${item.quantity}</div>
     <div class="returnPrice">₱${(item.price * item.quantity).toFixed(2)}</div>
@@ -127,3 +127,33 @@ function clearLocalStorageCartItems() {
   localStorage.removeItem("cartItems");
 }
 
+function buyNow(flowerId, quantity = 1) {
+  const selectedFlower = flowerData.find((flower) => flower.id === flowerId);
+  const existingCartItem = Array.from(cartContainer.children).find(
+    (item) => item.dataset.flowerId === String(flowerId)
+  );
+
+  if (existingCartItem) {
+    incrementQuantity(existingCartItem);
+  } else {
+    const cartItem = createCartItem(selectedFlower, flowerId, quantity);
+    cartContainer.appendChild(cartItem);
+    const cartItems = getCartItems();
+  console.log("Checkout - Cart Items:", cartItems);
+
+  //checker if cartItems array is present, then set the data to the local storage
+  if (cartItems.length) {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }
+
+  // After checkout, you may want to clear the cart or perform other actions
+  // Clearing the cart is just an example, you need to implement your own logic
+  const cartItemsContainer = document.querySelector(".listCart");
+  //cartItemsContainer.innerHTML = ""; // Clear the cart items
+
+  // Update the checkout summary after checkout
+  updateCheckoutSummary();
+  }
+  
+  
+}
