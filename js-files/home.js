@@ -1,3 +1,4 @@
+/*--Flower Data--*/
 const flowerData = [
     {
         "id": 1,
@@ -107,7 +108,7 @@ const flowerData = [
     }
 ]
 
-// Function to render flower data
+// Function to render all flower data
 function renderFlowers() {
     // Target the flower-card div
     const flowerContainer = document.getElementById('flower-card');
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function renderFlowerDetailsById(flowerId) {
     const flower = flowerData.find(flower => flower.id === flowerId);
-    const flowerDetailsContainer = document.getElementById('flower-details');
+    const flowerDetailsContainer = document.getElementById('flower-detail');
 
     if (flowerDetailsContainer && flower) {
         const flowerHTML = `
@@ -228,3 +229,6 @@ function renderRandomProducts(numProducts) {
         flowerContainer.innerHTML = productHTML;
     }
 }
+
+/*--------------------------------------------------------------------------------*/
+
