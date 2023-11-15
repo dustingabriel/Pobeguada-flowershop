@@ -216,7 +216,7 @@ function renderRandomProducts(numProducts) {
             <div class="product-card">
                 <div class="product-image">
                     <a href="product-${product.id}.html"><img src="${product.image}" class="product-thumb" alt=""></a>
-                    <button class="card-btn">Add to Cart</button>
+                    <button class="card-btn"onclick="addToCart(${product.id})">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-brand">${product.name}</h2>
