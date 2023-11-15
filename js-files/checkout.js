@@ -34,65 +34,12 @@ function getCartItems() {
 
 let listCart = [];
 
-function checkCart() {
-    var cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('listCart='));
-    
-    if (cookieValue) {
-        listCart = JSON.parse(cookieValue.split('=')[1]);
-    }
+function calculateTotalQuantity(cartItems) {
+  return cartItems.reduce((total, item) => total + item.quantity, 0);
 }
 
-checkCart();
-updateCheckoutSummary(); // Add this line to update summary after checking the cart
-addCartToHTML();
-
-function addCartToHTML() {
-    let listCartHTML = document.querySelector('.returnCart .list');
-    listCartHTML.innerHTML = '';
-
-    let totalQuantityHTML = document.getElementById('totalQuantity');
-    let totalPriceHTML = document.getElementById('totalPrice');
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-    if (listCart) {
-        listCart.forEach(product => {
-            if (product) {
-                let newCart = document.createElement('div');
-                newCart.classList.add('item');
-                newCart.innerHTML =
-                    `<img src="${product.image}">
-                    <div class="info">
-                        <div class="name">${product.name}</div>
-                        <div class="price">$${product.price.toFixed(2)}/1 product</div>
-                    </div>
-                    <div class="quantity">${product.quantity}</div>
-                    <div class="returnPrice">$${(product.price * product.quantity).toFixed(2)}</div>`;
-                listCartHTML.appendChild(newCart);
-                totalQuantity += product.quantity;
-                totalPrice += product.price * product.quantity;
-            }
-        })
-    }
-
-    totalQuantityHTML.textContent = totalQuantity;
-    totalPriceHTML.textContent = `$${totalPrice.toFixed(2)}`;
-}
-
-function calculateTotalQuantity() {
-  const cartItems = getCartItems();
-  const totalQuantity = cartItems.reduce((total, product) => total + product.quantity, 0);
-  console.log("Total Quantity:", totalQuantity);
-  return totalQuantity;
-}
-
-function calculateTotalPrice() {
-  const cartItems = getCartItems();
-  const totalPrice = cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
-  console.log("Total Price:", totalPrice);
-  return totalPrice;
+function calculateTotalPrice(cartItems) {
+  return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
 
@@ -100,20 +47,19 @@ function calculateTotalPrice() {
 function updateCheckoutSummary() {
   const totalQuantityElement = document.getElementById("totalQuantity");
   const totalPriceElement = document.getElementById("totalPrice");
+  const totalPriceElement = document.getElementById("totalPrice");
 
   if (!totalQuantityElement || !totalPriceElement) {
     console.error("Total quantity or total price elements not found.");
     return;
   }
 
-  const totalQuantity = calculateTotalQuantity();
-  const totalPrice = calculateTotalPrice();
-
-  console.log("Updating Checkout Summary - Total Quantity:", totalQuantity);
-  console.log("Updating Checkout Summary - Total Price:", totalPrice);
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const totalQuantity = calculateTotalQuantity(cartItems);
+  const totalPrice = calculateTotalPrice(cartItems);
 
   totalQuantityElement.textContent = totalQuantity;
-  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  totalPriceElement.textContent = `₱${totalPrice.toFixed(2)}`;
 }
 
 
@@ -154,7 +100,7 @@ function createCartItemElement(item) {
       <div class="price">$${item.price.toFixed(2)}</div>
     </div>
     <div class="quantity">${item.quantity}</div>
-    <div class="returnPrice">$${(item.price * item.quantity).toFixed(2)}</div>
+    <div class="returnPrice">₱${(item.price * item.quantity).toFixed(2)}</div>
   `;
 
   return cartItem;
@@ -171,7 +117,7 @@ function renderCartItems(container, cartItems) {
     container.appendChild(cartItemElement);
   });
 }
-
+updateCheckoutSummary();
 // Example usage:
 document.addEventListener("DOMContentLoaded", function () {
   const returnCartContainer = document.querySelector(".list");

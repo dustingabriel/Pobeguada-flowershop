@@ -85,7 +85,7 @@ function createNav() {
                 </div>
                 <a href="login.html"><img src="img/user.png" alt=""></a>
                 <div class="iconCart">
-                    <a href = "cart.html"><img src="img/cart.png"></a>
+                    <a ><img src="img/cart.png"></a>
                     <div class="totalQuantity">0</div>
                 </div>
                 <div class="cart">
