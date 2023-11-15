@@ -159,7 +159,7 @@ function renderFlowerDetailsById(flowerId) {
                     <p class="product-short-des">${flower.shortDes}</p>
                     <span class="product-price">₱${flower.price}</span>
 
-                    <a href="checkout.html" class="btn cart-btn" "onclick="checkout()">buy now</a>
+                    <a href="checkout.html" class="btn cart-btn" onclick="buyNow(${flower.id})" >buy now</a>
                     <button class="btn" onclick="addToCart(${flower.id})">add to cart</button>
                 </div>
             </section>
