@@ -32,41 +32,74 @@ function getCartItems() {
   return itemsArray;
 }
 
+let listCart = [];
 
+function checkCart() {
+    var cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('listCart='));
+    
+    if (cookieValue) {
+        listCart = JSON.parse(cookieValue.split('=')[1]);
+    }
+}
+
+checkCart();
+updateCheckoutSummary(); // Add this line to update summary after checking the cart
+addCartToHTML();
+
+function addCartToHTML() {
+    let listCartHTML = document.querySelector('.returnCart .list');
+    listCartHTML.innerHTML = '';
+
+    let totalQuantityHTML = document.getElementById('totalQuantity');
+    let totalPriceHTML = document.getElementById('totalPrice');
+    let totalQuantity = 0;
+    let totalPrice = 0;
+
+    if (listCart) {
+        listCart.forEach(product => {
+            if (product) {
+                let newCart = document.createElement('div');
+                newCart.classList.add('item');
+                newCart.innerHTML =
+                    `<img src="${product.image}">
+                    <div class="info">
+                        <div class="name">${product.name}</div>
+                        <div class="price">$${product.price.toFixed(2)}/1 product</div>
+                    </div>
+                    <div class="quantity">${product.quantity}</div>
+                    <div class="returnPrice">$${(product.price * product.quantity).toFixed(2)}</div>`;
+                listCartHTML.appendChild(newCart);
+                totalQuantity += product.quantity;
+                totalPrice += product.price * product.quantity;
+            }
+        })
+    }
+
+    totalQuantityHTML.textContent = totalQuantity;
+    totalPriceHTML.textContent = `$${totalPrice.toFixed(2)}`;
+}
 
 function calculateTotalQuantity() {
-  const cartItemsString = localStorage.getItem("cartItems");
-
-  // Check if cartItemsString is not null or undefined
-  if (cartItemsString) {
-    const cartItems = JSON.parse(cartItemsString);
-    
-    // Ensure that cartItems is an array
-    if (Array.isArray(cartItems)) {
-      const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-      console.log("Total Quantity:", totalQuantity);
-      return totalQuantity;
-    } else {
-      console.error("Cart items in local storage is not an array.");
-    }
-  } else {
-    console.error("Cart items not found in local storage.");
-  }
-
-  return 0; // Default value if there's an issue
+  const cartItems = getCartItems();
+  const totalQuantity = cartItems.reduce((total, product) => total + product.quantity, 0);
+  console.log("Total Quantity:", totalQuantity);
+  return totalQuantity;
 }
 
 function calculateTotalPrice() {
   const cartItems = getCartItems();
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
   console.log("Total Price:", totalPrice);
   return totalPrice;
 }
 
 
+
 function updateCheckoutSummary() {
   const totalQuantityElement = document.getElementById("totalQuantity");
-  const totalPriceElement = document.getElementById("totalPrice"); // Assuming .totalPrice is a unique class
+  const totalPriceElement = document.getElementById("totalPrice");
 
   if (!totalQuantityElement || !totalPriceElement) {
     console.error("Total quantity or total price elements not found.");
@@ -82,6 +115,7 @@ function updateCheckoutSummary() {
   totalQuantityElement.textContent = totalQuantity;
   totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 }
+
 
 // Function to handle the checkout process
 function checkout() {
