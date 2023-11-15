@@ -17,7 +17,7 @@
     
             
             <div class="returnCart">
-                <a href="/">keep shopping</a>
+                <a href="/" onclick="clearLocalStorageCartItems()">keep shopping</a>
                 <h1>List Product in Cart</h1>
                 <div class="list">
     
@@ -73,11 +73,11 @@
                 <div class="return">
                     <div class="row">
                         <div>Total Quantity</div>
-                        <div class="totalQuantity">70</div>
+                        <div id="totalQuantity">0</div>
                     </div>
                     <div class="row">
                         <div>Total Price</div>
-                        <div class="totalPrice">$900</div>
+                        <div id="totalPrice">$0</div>
                     </div>
                 </div>
                 <button class="buttonCheckout">CHECKOUT</button>
