@@ -55,18 +55,31 @@
                     </div>
         
                     <div class="group">
-                        <label for="country">Country</label>
+                        <label for="country">Payment Method</label>
                         <select name="country" id="country">
                             <option value="">Choose..</option>
-                            <option value="">Kingdom</option>
+                            <option value="">Cash On Delivery (COD) </option>
                         </select>
                     </div>
         
                     <div class="group">
                         <label for="city">City</label>
                         <select name="city" id="city">
-                            <option value="">Choose..</option>
-                            <option value="">London</option>
+                            <option value="">Metro Manila</option>
+                            <option value="">Caloocan City</option>
+                            <option value="">Las Piñas City</option>
+                            <option value="">Makati City</option>
+                            <option value="">Malabon City</option>
+                            <option value="">Mandaluyong City</option>
+                            <option value="">Manila City</option>
+                            <option value="">Marikina City</option>
+                            <option value="">Muntinlupa City</option>
+                            <option value="">Navotas City</option>
+                            <option value="">Parañaque City</option>
+                            <option value="">Pasay City</option>
+                            <option value="">Pasig City</option>
+                            <option value="">Quezon City</option>
+                            <option value="">San Juan  City</option>
                         </select>
                     </div>
                 </div>
@@ -80,7 +93,7 @@
                         <div id="totalPrice">$0</div>
                     </div>
                 </div>
-                <button class="buttonCheckout">CHECKOUT</button>
+                <button class="buttonCheckout" onclick="Alert()">CHECKOUT</button>
                 </div>
         </div>
     </div>
@@ -93,5 +106,10 @@
     <script src="js-files/app.js"></script>
     <script src="js-files/checkout.js"></script>
     
+    <script>
+        function Alert() {
+            alert("Transaction Completed!");
+        }
+    </script>
 </body>
 </html>
