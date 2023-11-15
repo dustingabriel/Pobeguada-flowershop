@@ -33,54 +33,30 @@ function getCartItems() {
 }
 
 
-
-function calculateTotalQuantity() {
-  const cartItemsString = localStorage.getItem("cartItems");
-
-  // Check if cartItemsString is not null or undefined
-  if (cartItemsString) {
-    const cartItems = JSON.parse(cartItemsString);
-    
-    // Ensure that cartItems is an array
-    if (Array.isArray(cartItems)) {
-      const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-      console.log("Total Quantity:", totalQuantity);
-      return totalQuantity;
-    } else {
-      console.error("Cart items in local storage is not an array.");
-    }
-  } else {
-    console.error("Cart items not found in local storage.");
-  }
-
-  return 0; // Default value if there's an issue
+function calculateTotalQuantity(cartItems) {
+  return cartItems.reduce((total, item) => total + item.quantity, 0);
 }
 
-function calculateTotalPrice() {
-  const cartItems = getCartItems();
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  console.log("Total Price:", totalPrice);
-  return totalPrice;
+function calculateTotalPrice(cartItems) {
+  return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
 
 function updateCheckoutSummary() {
   const totalQuantityElement = document.getElementById("totalQuantity");
-  const totalPriceElement = document.getElementById("totalPrice"); // Assuming .totalPrice is a unique class
+  const totalPriceElement = document.getElementById("totalPrice");
 
   if (!totalQuantityElement || !totalPriceElement) {
     console.error("Total quantity or total price elements not found.");
     return;
   }
 
-  const totalQuantity = calculateTotalQuantity();
-  const totalPrice = calculateTotalPrice();
-
-  console.log("Updating Checkout Summary - Total Quantity:", totalQuantity);
-  console.log("Updating Checkout Summary - Total Price:", totalPrice);
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const totalQuantity = calculateTotalQuantity(cartItems);
+  const totalPrice = calculateTotalPrice(cartItems);
 
   totalQuantityElement.textContent = totalQuantity;
-  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  totalPriceElement.textContent = `₱${totalPrice.toFixed(2)}`;
 }
 
 // Function to handle the checkout process
@@ -120,7 +96,7 @@ function createCartItemElement(item) {
       <div class="price">$${item.price.toFixed(2)}</div>
     </div>
     <div class="quantity">${item.quantity}</div>
-    <div class="returnPrice">$${(item.price * item.quantity).toFixed(2)}</div>
+    <div class="returnPrice">₱${(item.price * item.quantity).toFixed(2)}</div>
   `;
 
   return cartItem;
@@ -137,7 +113,7 @@ function renderCartItems(container, cartItems) {
     container.appendChild(cartItemElement);
   });
 }
-
+updateCheckoutSummary();
 // Example usage:
 document.addEventListener("DOMContentLoaded", function () {
   const returnCartContainer = document.querySelector(".list");
