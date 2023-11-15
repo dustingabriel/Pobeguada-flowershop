@@ -21,22 +21,34 @@ close.addEventListener('click', function (){
     container.style.transform = 'translateX(0)';
 })
 
-// // Function to add items to the cart
-// function addToCart(flowerId) {
-//     const selectedFlower = flowerData.find(flower => flower.id === flowerId);
-//     if (selectedFlower) {
-//         const cartItem = document.createElement('div');
-//         cartItem.className = 'item';
-//         cartItem.innerHTML = `
-//             <img src="${selectedFlower.image}" alt="${selectedFlower.name}">
-//             <div class="content">
-//                 <div class="name">${selectedFlower.name}</div>
-//                 <div class="price">$${selectedFlower.price} / 1 product</div>
-//             </div>
-//         `;
-//         cartContainer.appendChild(cartItem);
-//     }
-// }
+// Load the cart from localStorage when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    loadCart();
+});
+
+// Save the cart to localStorage
+function saveCart() {
+    const cartItems = Array.from(cartContainer.children).map(item => {
+        return {
+            flowerId: item.dataset.flowerId,
+            quantity: parseInt(item.querySelector('.quantity span.value').textContent, 10)
+        };
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
+// Load the cart from localStorage
+function loadCart() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cartItems.forEach(item => {
+        addToCart(item.flowerId, item.quantity);
+    });
+
+    updateTotalQuantity();
+}
+
 function addToCart(flowerId) {
     const selectedFlower = flowerData.find(flower => flower.id === flowerId);
 
@@ -72,6 +84,7 @@ function addToCart(flowerId) {
     }
 
     updateTotalQuantity(); // Call the function to update the total quantity
+    saveCart();
 }
 
 // Function to increment the quantity
